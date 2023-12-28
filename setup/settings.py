@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-from utils.env import get_env_variable, parse_comma_set_str_to_list
+
 from django.contrib.messages import constants
+
+from utils.env import get_env_variable, parse_comma_set_str_to_list
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'apps.todo.apps.TodoConfig',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +91,6 @@ DATABASES = {
         'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
-
 
 
 # Password validation
@@ -140,9 +143,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MESSAGE_TAGS = {
-    constants.DEBUG: 'secondary',
+    constants.DEBUG: 'info',
     constants.SUCCESS: 'success',
-    constants.WARNING: 'warning',
-    constants.ERROR: 'danger',
-    constants.INFO: 'primary',
+    constants.WARNING: 'error',
+    constants.ERROR: 'error',
+    constants.INFO: 'info',
 }

@@ -1,0 +1,31 @@
+<div class="form-control gap-4">
+    {{ form.completed.label_tag }} 
+    {{ form.completed }}
+
+    {{ form.task.label_tag }} 
+    {{ form.task }}
+    {% if form.delivery.help_text %}
+        <div class="label">
+            <span class="label-text-alt">{{ form.task.help_text }}</span>
+        </div>
+    {% endif %}
+    {% if form.task.errors %}
+        <div class="error">
+            {{ form.task.errors }}
+        </div>
+    {% endif %}
+
+    {{ form.details.label_tag }} 
+    {{ form.details }}
+    {% if form.delivery.help_text %}
+        <div class="label">
+            <span class="label-text-alt">{{ form.details.help_text }}</span>
+        </div>
+    {% endif %}
+    {% if form.details.errors %}
+        <div class="error">
+            {{ form.details.errors }}
+        </div>
+    {% endif %}
+</div>
+<div class="hidden input input-bordered textarea textarea-bordered w-full max-w-xs toggle toggle-success"></div>

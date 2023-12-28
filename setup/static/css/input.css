@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.alert-custom {
+    transition: opacity 300ms ease-in-out;
+    opacity: 1;
+}
+
+.fade-out-custom {
+    opacity: 0;
+}
