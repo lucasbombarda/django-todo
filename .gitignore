@@ -417,7 +417,7 @@ dist
 .svelte-kit
 
 
-
 # Manual ignores
 old_req.txt
 staticfiles/
+setup/static/css/output.css
